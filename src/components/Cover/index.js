@@ -1,7 +1,5 @@
-import { gsap } from 'gsap';
 import './styles.css';
 import Images from '../../assets/images';
-import { useEffect } from 'react';
 
 const Cover = () => {
 

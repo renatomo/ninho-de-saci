@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 
-export const coverAnimations = (setLoaded) => {
+export const loadCoverAnimations = (setLoaded) => {
   gsap.timeline()
     .fromTo(
       '.cover-image',
@@ -58,7 +58,7 @@ export const coverAnimations = (setLoaded) => {
 
 };
 
-export const readingAreaAnimations = () => {
+export const loadReadingAreaTransition = () => {
   gsap.timeline({
     scrollTrigger: {
       trigger: '.reading-area',
@@ -66,7 +66,7 @@ export const readingAreaAnimations = () => {
       // end: '100%',
       pin: true,
       scrub: true,
-      markers: true,
+      // markers: true,
       pinSpacing: true,
     }
   })
@@ -82,6 +82,55 @@ export const readingAreaAnimations = () => {
         xPercent: 0,
         // scale: .5,
         // width: '100vw',
+        // onComplete: () => console.log('onComplete'),
+        // onInterrupt: () => console.log('onInterrupt'),
+        // onCompleteParams: () => console.log('onCompleteParams'),
+        // onRepeat: () => console.log('onRepeat'),
+        // onReverseComplete: () => console.log('onReverseComplete'),
+        // onUpdate: () => console.log('onUpdate'),
+        // onUpdateParams: (a) => console.log('onUpdateParams', a),
+        // onStart: () => console.log('onStart'),
       }
     )
 };
+
+export const loadPagesAnimation = (readingArea) => {
+  const pages = gsap.utils.toArray('.page');
+  const size = 100 * pages.length;
+  const container = readingArea;
+  gsap.set('.reading-area', { y: size + 'vw', x: size + 'vh'});
+
+  gsap.to(container, {
+    x: () => -(container.scrollWidth - document.documentElement.clientWidth) + "px",
+    ease: "none",
+    scrollTrigger: {
+      trigger: container,
+      invalidateOnRefresh: true,
+      pin: true,
+      scrub: 1,
+      end: () => "+=" + container.offsetWidth
+    }
+  })
+  // gsap.set('.reading-area', { y: size + 'vw', x: size + 'vh'});
+  // pages.forEach((page, index) => {
+  //   console.log(window.innerWidth * 'px');
+  //   const tl = gsap.timeline();
+  //   tl.set(page, { xPercent: 100 * index})
+  //     .to(
+  //       page,
+  //       {
+  //         xPercent: 10 * index,
+  //         ease: "none",
+  //         // duration: 10 * index,
+  //         scrollTrigger: {
+  //           // trigger: page,
+  //           start: window.innerWidth * index + 'px',
+  //           end: '+=1000',
+  //           scrub: true,
+  //           // pin: true,
+  //           // pinSpacing: true,
+  //         },
+  //       }
+  //     )
+  // });
+}
