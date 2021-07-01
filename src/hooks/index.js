@@ -133,4 +133,17 @@ export const loadPagesAnimation = (readingArea) => {
   //       }
   //     )
   // });
-}
+};
+
+export const loadPageText = (mainImage, textImage) => {
+  gsap.fromTo(
+      textImage,
+      {
+        opacity: 0,
+      },
+      {
+        delay: 2,
+        opacity: 1,
+      },
+    );
+};

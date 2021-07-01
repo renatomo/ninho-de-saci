@@ -9,7 +9,6 @@ import Cover from './components/Cover';
 import ReadingArea from './components/ReadingArea';
 
 function App() {
-  document.title = "Ninho de Saci"
   const [coverLoaded, setCoverLoaded] = useState(false)
   gsap.registerPlugin(ScrollTrigger);
 
