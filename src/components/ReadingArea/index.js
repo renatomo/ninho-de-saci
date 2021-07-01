@@ -13,7 +13,7 @@ const ReadingArea = () => {
   const renderNextButton = () => {
     if (pageIndex < pageImages.length -1) {
       return (
-        <button className="button" onClick={ () => setPageIndex(pageIndex + 1) }>
+        <button className="button" onClick={ () => setPageIndex((curr) => curr + 1) }>
           Próxima página <GrLinkNext />
         </button>
       );
@@ -23,7 +23,7 @@ const ReadingArea = () => {
   const renderPreviousButton = () => {
     if (pageIndex > 0) {
       return (
-        <button className="button" onClick={ () => setPageIndex(pageIndex - 1) }>
+        <button className="button" onClick={ () => setPageIndex((curr) => curr - 1) }>
           <GrLinkPrevious /> Página anterior
         </button>
       );
@@ -39,7 +39,7 @@ const ReadingArea = () => {
 
   return (
     <section className="reading-area">
-      <Page { ...pageImages[pageIndex] } />
+      <Page { ...pageImages[pageIndex] } index={ pageIndex } />
       <div
         className="page-nav"
         { ...(pageIndex === 0) && { style: { justifyContent: 'end' } } }
