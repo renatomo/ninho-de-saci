@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './assets/fonts/Schoolbell-Regular.ttf';
+import Favicon from 'react-favicon';
+import Icon from './assets/images/favicon.ico';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Favicon url={ Icon } />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
