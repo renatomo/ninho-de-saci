@@ -1,8 +1,34 @@
+.button {
+  background-color: white;
+  font-family: "Schoolbell";
+  border: none;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .reading-area {
   background-color: white;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
   height: 100vh;
-  /* overflow: hidden; */
-  width: 100vw;
+  overflow: hidden;
+  overflow-y: hidden;
+  /* Hide Scrollbar in IE and Edge */
+  -ms-overflow-style: none;
+  /* Hide Scrollbar in Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide Scrollbar in Chrome */
+.reading-area::-webkit-scrollbar {
+  display: none;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,5 +1,5 @@
 .cover {
-  background-color: #625195;
+  background-color: #3f3162;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -12,5 +12,8 @@
 
 .cover-text {
   position: absolute;
-  height: 50vh;
+  height: 72vh;
+  width: auto;
+  left: 8vw;
+  top: -7vh;
 }

@@ -21,10 +21,10 @@ function App() {
   );
 
   return (
-    <div className="app-container">
+    <main className="app-container">
       <Cover />
       { coverLoaded && <ReadingArea /> }
-    </div>
+    </main>
   );
 }
 
