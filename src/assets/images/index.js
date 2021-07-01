@@ -17,6 +17,7 @@ import Page13 from './pagina13.jpg';
 import Page14 from './pagina14.jpg';
 import Page15 from './pagina15.jpg';
 import Page16 from './pagina16.jpg';
+import Page17 from './pagina17.jpg';
 import Page2Text from './pagina2-texto1.png';
 import Page3Text from './pagina3-texto1.png';
 import Page4Text from './pagina4-texto1.png';
@@ -32,6 +33,7 @@ import Page13Text from './pagina13-texto1.png';
 import Page14Text from './pagina14-texto1.png';
 import Page15Text from './pagina15-texto1.png';
 import Page16Text from './pagina16-texto1.png';
+import Page17Text from './pagina17-texto1.png';
 
 const images = {
   cover: { image: CoverImage, text: CoverText },
@@ -99,6 +101,10 @@ const images = {
     {
       image: Page16,
       text: Page16Text,
+    },
+    {
+      image: Page17,
+      text: Page17Text,
     },
   ],
 };

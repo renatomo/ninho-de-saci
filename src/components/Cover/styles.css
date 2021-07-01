@@ -12,8 +12,8 @@
 
 .cover-text {
   position: absolute;
-  height: 72vh;
-  width: auto;
-  left: 8vw;
-  top: -7vh;
+  height: auto;
+  width: 72vw;
+  left: 8%;
+  top: 7vh;
 }
