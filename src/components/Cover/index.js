@@ -1,7 +1,11 @@
+import React, { useContext } from 'react';
+import { AppContext } from '../../context';
 import './styles.css';
 import Images from '../../assets/images';
 
 const Cover = () => {
+  const context = useContext(AppContext);
+  console.log(context);
 
   return (
     <section className="cover">

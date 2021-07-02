@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { loadCoverAnimations } from './hooks';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import { AppProvider } from './context';
 import './App.css';
 import Cover from './components/Cover';
 import ReadingArea from './components/ReadingArea';
@@ -20,10 +20,12 @@ function App() {
   );
 
   return (
-    <main className="app-container">
-      <Cover />
-      { coverLoaded && <ReadingArea /> }
-    </main>
+    <AppProvider>
+      <main className="app-container">
+        <Cover />
+        { coverLoaded && <ReadingArea /> }
+      </main>
+    </AppProvider>
   );
 }
 
