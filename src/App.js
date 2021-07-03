@@ -1,31 +1,48 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { loadCoverAnimations } from './hooks';
+import React, { useContext } from 'react';
+import { AppContext } from './context';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { AppProvider } from './context';
+import cacheFiles from './hooks/preload';
 import './App.css';
 import Cover from './components/Cover';
+import Modal from './components/Modal';
 import ReadingArea from './components/ReadingArea';
+import { useEffect } from 'react';
+import { useState } from 'react';
+
+const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
 function App() {
-  const [coverLoaded, setCoverLoaded] = useState(false)
-  gsap.registerPlugin(ScrollTrigger);
+  const [chromeMode, setChromeMode] = useState(isChrome);
 
+  const {
+    isCoverLoaded,
+    images,
+    useFetchingCover,
+    useLoadedPageMedia,
+  } = useContext(AppContext);
+
+  gsap.registerPlugin(ScrollTrigger);
+  
   useEffect(
     () => {
-      loadCoverAnimations(setCoverLoaded);
+      const coverMedia = Object.values(images.cover);
+      const pagesMedia = images.pages.map((page) => Object.values(page));
+      cacheFiles(coverMedia, useFetchingCover, false);
+      pagesMedia.forEach((page, index) => {
+        cacheFiles(coverMedia, useLoadedPageMedia, index);
+      });
     },
     [],
   );
 
   return (
-    <AppProvider>
-      <main className="app-container">
-        <Cover />
-        { coverLoaded && <ReadingArea /> }
-      </main>
-    </AppProvider>
+    <main className="app-container">
+      { chromeMode
+        ? <Modal setMode={ setChromeMode } />
+        : <Cover /> }
+      { isCoverLoaded && <ReadingArea /> }
+    </main>
   );
 }
 

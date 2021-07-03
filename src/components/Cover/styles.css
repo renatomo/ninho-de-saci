@@ -1,9 +1,12 @@
 .cover {
-  background-color: #3f3162;
+  /* background-color: #3f3162; */
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   overflow: hidden;
+  background: -webkit-linear-gradient(to right, #3f3162, #48365c);
+  background: linear-gradient(to right, #3f3162, #48365c);
 }
 
 .cover-image {

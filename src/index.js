@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppProvider } from './context';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +11,9 @@ import Icon from './assets/images/favicon.ico';
 ReactDOM.render(
   <React.StrictMode>
     <Favicon url={ Icon } />
-    <App />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

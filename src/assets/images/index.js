@@ -1,5 +1,6 @@
 import CoverImage from './cover.jpg';
 import CoverText from './cover-text.png';
+import CoverAudio from './cover-audio.mp3';
 import Page1 from './pagina1.jpg';
 import Page1Text from './pagina1-texto1.png';
 import Page2 from './pagina2.jpg';
@@ -36,7 +37,7 @@ import Page16Text from './pagina16-texto1.png';
 import Page17Text from './pagina17-texto1.png';
 
 const images = {
-  cover: { image: CoverImage, text: CoverText },
+  cover: { image: CoverImage, text: CoverText, audio: CoverAudio },
   pages: [
     {
       image: Page1,
