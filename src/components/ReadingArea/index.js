@@ -42,7 +42,7 @@ const ReadingArea = () => {
       <Page { ...pageImages[pageIndex] } index={ pageIndex } />
       <div
         className="page-nav"
-        { ...(pageIndex === 0) && { style: { justifyContent: 'end' } } }
+        { ...(pageIndex === 0) && { style: { justifyContent: 'flex-end' } } }
       >
         { renderPreviousButton() }
         { renderNextButton() }
