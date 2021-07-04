@@ -1,10 +1,10 @@
 .button {
-  background-color: white;
-  font-family: "Schoolbell";
-  border: none;
-  font-size: 2em;
-  display: flex;
   align-items: center;
+  background-color: white;
+  border: none;
+  display: flex;
+  font-family: "Schoolbell";
+  font-size: 2em;
   justify-content: space-between;
 }
 

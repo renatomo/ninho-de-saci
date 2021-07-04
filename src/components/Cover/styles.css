@@ -1,12 +1,12 @@
 .cover {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
   background: -webkit-linear-gradient(to right, #3f3162, #48365c);
   background: linear-gradient(to right, #3f3162, #48365c);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .cover__image {
@@ -14,19 +14,18 @@
 }
 
 .cover__message {
-  font-family: "Schoolbell";
-  display: flex;
-  justify-content: center;
   align-items: center;
-  top: 0;
-  position: absolute;
-  width: 100vw;
-  height: 7vh;
   background-color: rgb(72, 73, 67, .6);
   color: white;
+  display: flex;
+  font-family: "Schoolbell";
   font-size: 1.4em;
+  justify-content: center;
+  height: 7vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
   z-index: 1;
-  /* text-transform: uppercase; */
 }
 
 .cover__message__text {
@@ -34,11 +33,11 @@
 }
 
 .cover__text {
-  position: absolute;
   height: 72vh;
-  width: auto;
   left: 8%;
+  position: absolute;
   top: -7vh;
+  width: auto;
 }
 
 .cover__message__icon{
