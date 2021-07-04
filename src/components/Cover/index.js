@@ -24,7 +24,7 @@ const spinnerCSS = `
 `
 
 const Cover = () => {
-  const { cover: { image, text } } = Media;
+  const { cover: { image, text, audio } } = Media;
   const {
     hooks: { useIsCoverLoaded },
     fetching: { cover: isCoverMediaFetching, pages },
@@ -63,7 +63,7 @@ const Cover = () => {
         ? <CircleLoader css={ spinnerCSS } color="#9190b8" speedMultiplier={ 0.5 } size={ '50vh' } />
         : <>
             { shouldShowMessage && renderMessage() }
-            <AudioPlayer source={ Media.cover.audio } />
+            <AudioPlayer source={ audio } />
             <img src={ image } alt="" className="cover__image" />
             <img src={ text } alt="" className="cover__text" />
           </> 

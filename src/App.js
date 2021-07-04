@@ -6,6 +6,7 @@ import cacheFiles from './services/cacheFiles';
 import Cover from './components/Cover';
 import Modal from './components/Modal';
 import ReadingArea from './components/ReadingArea';
+import BackCover from './components/BackCover';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -42,7 +43,11 @@ function App() {
       { chromeMode
         ? <Modal setMode={ setChromeMode } />
         : <Cover /> }
-      { isCoverLoaded && <ReadingArea /> }
+      { isCoverLoaded && (
+      <>
+        <ReadingArea />
+        <BackCover />
+      </> )}
     </main>
   );
 }

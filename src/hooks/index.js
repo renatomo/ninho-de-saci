@@ -35,8 +35,8 @@ export const loadCoverAnimations = (setLoaded, setShowMessage) => {
       {
         opacity: 1,
         delay: .2,
-        duration: 7,
-        // duration: 1,
+        // duration: 7,
+        duration: 1,
         ease: 'slow',
         webkitFilter: "blur(" + 0 + "px)",
         scale: 1,
@@ -51,10 +51,10 @@ export const loadCoverAnimations = (setLoaded, setShowMessage) => {
       },
       {
         opacity: 1,
-        delay: 2,
-        // delay: 1,
-        duration: 5,
-        // duration: 1,
+        // delay: 2,
+        delay: 1,
+        // duration: 5,
+        duration: 1,
         scale: 1,
         ease: 'slow',
         onComplete: () => {
@@ -165,3 +165,23 @@ export const changeImages = (pageElement) => {
     );
 };
 
+export const backCoverParallax = (bg) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".back-cover",
+      scrub: true,
+    },
+  });
+  
+  tl.fromTo(
+    '.back-cover__bg',
+    {
+      scale: 1.2,
+    },
+    {
+      scale: 1,
+      webkitFilter: "blur(" + 0 + "px)",
+      backgroundPosition: 'bottom',
+    },
+  );
+};
