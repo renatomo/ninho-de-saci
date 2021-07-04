@@ -1,6 +1,7 @@
 import CoverImage from './cover.jpg';
 import CoverText from './cover-text.png';
 import CoverAudio from './cover-audio.mp3';
+import BackCoverImage from './contracapa.jpg';
 import Page1 from './pagina1.jpg';
 import Page1Text from './pagina1-texto1.png';
 import Page2 from './pagina2.jpg';
@@ -36,9 +37,9 @@ import Page15Text from './pagina15-texto1.png';
 import Page16Text from './pagina16-texto1.png';
 import Page17Text from './pagina17-texto1.png';
 
-const images = {
+const media = {
   cover: { image: CoverImage, text: CoverText, audio: CoverAudio },
-  backCover: { image: CoverImage },
+  backCover: { image: BackCoverImage },
   pages: [
     {
       image: Page1,
@@ -111,4 +112,4 @@ const images = {
   ],
 };
 
-export default images;
+export default media;
