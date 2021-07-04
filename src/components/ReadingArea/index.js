@@ -1,14 +1,15 @@
+import React, { useEffect, useState, useContext } from 'react';
 import { loadReadingAreaTransition } from '../../hooks';
 import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
-import './styles.css';
-import Media from '../../assets/media';
+import { AppContext } from '../../context';
 import Page from '../Page';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import './styles.css';
 
 const ReadingArea = () => {
-  // TO DO: Change to context
-  const { pages } = Media;
+  const {
+    media: { pages },
+    fetching: { pages: fetchingPages }
+  } = useContext(AppContext);
   const [pageIndex, setPageIndex] = useState(0);
 
   const renderNextButton = () => {

@@ -10,7 +10,7 @@ const Page = ({ image, text, index }) => {
   useEffect(
     () => {
       loadPageText(mainImage, textImage);
-      changeImages(pageElement);
+      // changeImages(pageElement);
     },
     [index],
   );
