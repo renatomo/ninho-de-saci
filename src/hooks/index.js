@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 
-export const loadCoverAnimations = (setLoaded) => {
+export const loadCoverAnimations = (setLoaded, setShowMessage) => {
   const colours = [
     'radial-gradient(circle, rgba(63,49,98,1) 0%, rgba(148,147,178,1) 25%, rgba(72,54,92,1) 66%)',
     'radial-gradient(circle, rgba(63,49,98,1) 0%, rgba(148,147,178,1) 21%, rgba(72,54,92,1) 87%)',
@@ -10,13 +10,13 @@ export const loadCoverAnimations = (setLoaded) => {
     'radial-gradient(circle, rgba(148,147,178,1) 0%, rgba(72,54,92,1) 21%, rgba(63,49,98,1) 87%)',
     ];
 
-  const homeAnimationTL = gsap.timeline({
+  const backgroundTimeline = gsap.timeline({
     repeat: -1,
     onRepeat: function() { this.invalidate(); }
   });
 
   colours.forEach(function(item, index) {
-    homeAnimationTL.to('.cover', {
+    backgroundTimeline.to('.cover', {
       smoothOrigin:true,
       background: item,
       duration: 1,
@@ -24,9 +24,9 @@ export const loadCoverAnimations = (setLoaded) => {
     });
   });
 
-  gsap.timeline()
-    .fromTo(
-      '.cover-image',
+  const imagesTimeline = gsap.timeline();
+  imagesTimeline.fromTo(
+      '.cover__image',
       {
         opacity: 0,
         webkitFilter: "blur(" + 100 + "px)",
@@ -44,7 +44,7 @@ export const loadCoverAnimations = (setLoaded) => {
       'start'
     )
     .fromTo(
-      '.cover-text',
+      '.cover__text',
       {
         opacity:0,
         scale: .2,
@@ -57,12 +57,15 @@ export const loadCoverAnimations = (setLoaded) => {
         // duration: 1,
         scale: 1,
         ease: 'slow',
-        onComplete: () => setLoaded(true),
+        onComplete: () => {
+          setLoaded(true);
+          setShowMessage(true);
+        },
       },
       'start',
     )
     .fromTo(
-      '.cover-image',
+      '.cover__image',
       {
         duration: .2,
         scale: 1.5,
@@ -92,8 +95,26 @@ export const loadCoverAnimations = (setLoaded) => {
           pinSpacing: false,
         },
       },
-    )
+    );
+  
 };
+
+export const loadMessageIconsAnimation = () => {
+  const iconsTimeline = gsap.timeline();
+  iconsTimeline.fromTo(
+    '.cover__message__icon',
+    {
+      yPercent: -20,
+    },
+    {
+      yPercent: 20,
+      smoothOrigin: true,
+      yoyo: true,
+      repeat: -1,
+      duration: .8,
+    },
+  );
+}
 
 export const loadReadingAreaTransition = () => {
   gsap.timeline({

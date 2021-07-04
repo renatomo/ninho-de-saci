@@ -9,7 +9,7 @@ import { useState } from 'react';
 const ReadingArea = () => {
   // TO DO: Change to context
   const { pages } = Media;
-  const [ pageIndex, setPageIndex ] = useState(0);
+  const [pageIndex, setPageIndex] = useState(0);
 
   const renderNextButton = () => {
     if (pageIndex < pages.length -1) {
