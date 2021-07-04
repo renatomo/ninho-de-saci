@@ -1,5 +1,4 @@
 .cover {
-  /* background-color: #3f3162; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,11 +8,11 @@
   background: linear-gradient(to right, #3f3162, #48365c);
 }
 
-.cover-image {
+.cover__image {
   height: 100vh;
 }
 
-.cover-text {
+.cover__text {
   position: absolute;
   height: 72vh;
   width: auto;

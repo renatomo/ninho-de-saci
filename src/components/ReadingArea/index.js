@@ -1,17 +1,18 @@
 import { loadReadingAreaTransition } from '../../hooks';
 import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr';
 import './styles.css';
-import Images from '../../assets/images';
+import Media from '../../assets/media';
 import Page from '../Page';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
 const ReadingArea = () => {
-  const { pages: pageImages } = Images;
+  // TO DO: Change to context
+  const { pages } = Media;
   const [ pageIndex, setPageIndex ] = useState(0);
 
   const renderNextButton = () => {
-    if (pageIndex < pageImages.length -1) {
+    if (pageIndex < pages.length -1) {
       return (
         <button className="button" onClick={ () => setPageIndex((curr) => curr + 1) }>
           Próxima página <GrLinkNext />
@@ -39,7 +40,7 @@ const ReadingArea = () => {
 
   return (
     <section className="reading-area">
-      <Page { ...pageImages[pageIndex] } index={ pageIndex } />
+      <Page { ...pages[pageIndex] } index={ pageIndex } />
       <div
         className="page-nav"
         { ...(pageIndex === 0) && { style: { justifyContent: 'flex-end' } } }

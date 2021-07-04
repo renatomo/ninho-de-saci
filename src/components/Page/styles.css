@@ -8,12 +8,12 @@
   align-items: center;
 }
 
-.page-image {
+.page__image {
   max-width: 100vw;
   object-fit: contain;
 }
 
-.page-text {
+.page__text {
   max-width: 100vw;
   object-fit: contain;
   position: absolute;

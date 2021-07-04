@@ -15,17 +15,6 @@
   justify-content: center;
   justify-items: center;
   height: 100vh;
-  overflow: hidden;
-  overflow-y: hidden;
-  /* Hide Scrollbar in IE and Edge */
-  -ms-overflow-style: none;
-  /* Hide Scrollbar in Firefox */
-  scrollbar-width: none;
-}
-
-/* Hide Scrollbar in Chrome */
-.reading-area::-webkit-scrollbar {
-  display: none;
 }
 
 .page-nav {

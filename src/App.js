@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import { AppContext } from './context';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import cacheFiles from './hooks/preload';
-import './App.css';
+import cacheFiles from './services/cacheFiles';
 import Cover from './components/Cover';
 import Modal from './components/Modal';
 import ReadingArea from './components/ReadingArea';
@@ -16,28 +15,30 @@ function App() {
   const [chromeMode, setChromeMode] = useState(isChrome);
 
   const {
-    isCoverLoaded,
-    images,
-    useFetchingCover,
-    useLoadedPageMedia,
+    media,
+    states: { isCoverLoaded },
+    hooks: {
+      useFetchingCover,
+      useLoadedPageMedia,
+    },
   } = useContext(AppContext);
 
   gsap.registerPlugin(ScrollTrigger);
   
   useEffect(
     () => {
-      const coverMedia = Object.values(images.cover);
-      const pagesMedia = images.pages.map((page) => Object.values(page));
+      const coverMedia = Object.values(media.cover);
+      const pagesMedia = media.pages.map((page) => Object.values(page));
       cacheFiles(coverMedia, useFetchingCover, false);
       pagesMedia.forEach((page, index) => {
-        cacheFiles(coverMedia, useLoadedPageMedia, index);
+        cacheFiles([].concat(...page), useLoadedPageMedia, index);
       });
     },
     [],
   );
 
   return (
-    <main className="app-container">
+    <main>
       { chromeMode
         ? <Modal setMode={ setChromeMode } />
         : <Cover /> }

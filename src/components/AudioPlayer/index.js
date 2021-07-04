@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../../context';
 import ReactPlayer from 'react-player';
+import { AppContext } from '../../context';
 
 const AudioPlayer = ({ source, playCallback = null, onEndCallback = () => null }) => {
-  const { audioOff } = useContext(AppContext);
+  const { states: { audioOff } } = useContext(AppContext);
 
   if (audioOff) return null;
 
@@ -14,7 +14,6 @@ const AudioPlayer = ({ source, playCallback = null, onEndCallback = () => null }
       playing={ true }
       url={ source }
       style={ { display: 'none' } }
-      // style={ { position: 'absolute', display: 'flex', float: 'right', zIndex: 0, left: 0 } }
     />
   );
 };

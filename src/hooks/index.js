@@ -17,6 +17,7 @@ export const loadCoverAnimations = (setLoaded) => {
 
   colours.forEach(function(item, index) {
     homeAnimationTL.to('.cover', {
+      smoothOrigin:true,
       background: item,
       duration: 1,
       ease: 'power3',
@@ -69,6 +70,7 @@ export const loadCoverAnimations = (setLoaded) => {
       },
       {
         yoyo: true,
+        smoothOrigin: true,
         duration: 1,
         repeat: -1,
         scale: 1,

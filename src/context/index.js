@@ -1,8 +1,8 @@
 import React, { createContext } from 'react';
 import { useState } from 'react';
-import images from '../assets/images';
+import media from '../assets/media';
 
-const INITIAL_PAGES_STATUS = images.pages.map(() => true);
+const INITIAL_PAGES_STATUS = media.pages.map(() => true);
 const INITIAL_COVER_STATUS = true;
 const INITIAL_BACKCOVER_STATUS = true;
 const INITIAL_STATE = {
@@ -11,7 +11,7 @@ const INITIAL_STATE = {
     backCover: INITIAL_BACKCOVER_STATUS,
     pages: INITIAL_PAGES_STATUS,
   },
-  images,
+  media,
 };
 
 const AppContext = createContext(INITIAL_STATE);
@@ -33,15 +33,19 @@ const AppProvider = ({ children }) => {
       pages: fetchingPages,
       backCover: fetchingBackCover,
     },
-    images,
-    isCoverLoaded,
-    audioOff,
-    useAudioOff,
-    useIsCoverLoaded,
-    useFetchingCover,
-    useLoadedPageMedia,
-    useFetchingPages,
-    useFetchingBackCover,
+    media,
+    states: {
+      isCoverLoaded,
+      audioOff,
+    },
+    hooks: {
+      useAudioOff,
+      useIsCoverLoaded,
+      useFetchingCover,
+      useLoadedPageMedia,
+      useFetchingPages,
+      useFetchingBackCover,
+    },
   };
 
   return (

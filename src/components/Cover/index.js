@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from 'react';
+import CircleLoader from "react-spinners/CircleLoader";
 import { AppContext } from '../../context';
 import { loadCoverAnimations } from '../../hooks';
-import CircleLoader from "react-spinners/CircleLoader";
-import './styles.css';
 import AudioPlayer from '../AudioPlayer';
-import Images from '../../assets/images';
+import Media from '../../assets/media';
+import './styles.css';
 
 const spinnerCSS = `
   overflow: hidden;
@@ -22,8 +22,9 @@ const spinnerCSS = `
 `
 
 const Cover = () => {
+  const { cover: { image, text } } = Media;
   const {
-    useIsCoverLoaded,
+    hooks: { useIsCoverLoaded },
     fetching: { cover: isCoverMediaFetching },
   } = useContext(AppContext);
 
@@ -42,9 +43,9 @@ const Cover = () => {
           </CircleLoader>
         : (
           <>
-            <AudioPlayer source={ Images.cover.audio } />
-            <img src={ Images.cover.image } alt="" className="cover-image" />
-            <img src={ Images.cover.text } alt="" className="cover-text" />
+            <AudioPlayer source={ Media.cover.audio } />
+            <img src={ image } alt="" className="cover__image" />
+            <img src={ text } alt="" className="cover__text" />
           </>
         )
       }

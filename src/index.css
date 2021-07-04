@@ -1,6 +1,22 @@
+@font-face {
+  font-family: "Schoolbell";
+  src: local("Schoolbell"),
+  url("./assets/fonts/Schoolbell-Regular.ttf") format("truetype");
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
   overflow-x: hidden;
+  /* Hide Scrollbar in IE and Edge */
+  -ms-overflow-style: none;
+  /* Hide Scrollbar in Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide Scrollbar in Chrome */
+*::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -15,11 +31,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-@font-face {
-  font-family: "Schoolbell";
-  src: local("Schoolbell"),
-  url("./assets/fonts/Schoolbell-Regular.ttf") format("truetype");
-  font-weight: bold;
 }

@@ -17,8 +17,8 @@ const Page = ({ image, text, index }) => {
 
   return (
     <div ref={ e => pageElement = e } src={ image } className="page">
-      <img ref={ e => textImage = e } src={ text } alt="" className="page-text" />
-      <img ref={ e => mainImage = e } src={ image } alt="" className="page-image" />
+      <img ref={ e => textImage = e } src={ text } alt="" className="page__text" />
+      <img ref={ e => mainImage = e } src={ image } alt="" className="page__image" />
     </div>
   );
 };
