@@ -151,24 +151,11 @@ export const loadPageText = (mainImage, textImage) => {
     );
 };
 
-export const changeImages = (pageElement) => {
-  gsap.fromTo(
-    pageElement,
-      {
-        xPercent: 100,
-      },
-      {
-        xPercent: 0,
-        duration: 1,
-        ease: 'power3'
-      },
-    );
-};
-
 export const backCoverParallax = (bg) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".back-cover",
+      end: 'bottom bottom',
       scrub: true,
     },
   });
@@ -180,8 +167,36 @@ export const backCoverParallax = (bg) => {
     },
     {
       scale: 1,
-      webkitFilter: "blur(" + 0 + "px)",
-      backgroundPosition: 'bottom',
     },
   );
+};
+
+export const pageChangeAnimation = (
+  { current, next, callback, orientation },
+) => {
+  if (next && orientation < 0) {
+    next.style.transform = 'translate(-200%)';
+  }
+  const to = -100 * orientation;
+  const timeline = gsap.timeline();
+  timeline.fromTo(
+    current,
+    {
+      xPercent: 0,
+    },
+    {
+      xPercent: to,
+    },
+  )
+    .fromTo(
+      next,
+      {
+        xPercent: 0,
+      },
+      {
+        xPercent: to,
+        onComplete: callback,
+      },
+      "<",
+    )
 };

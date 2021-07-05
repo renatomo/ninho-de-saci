@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import { backCoverParallax } from '../../hooks';
+import { backCoverParallax } from '../../hooks/animations';
 import { AppContext } from '../../context';
 import './styles.css';
 
@@ -12,7 +12,7 @@ const credits = [
   { name: 'Rodrigo Acioli', role: 'Editor' },
   { name: 'Célia Menezes', role: 'Webdesigner' },
   { name: 'Renato Feitosa', role: 'Desenvolvedor Web' },
-  { name: 'Naíma Valois', role: 'Lucutora' },
+  { name: 'Naíma Valois', role: 'Locutora' },
   { name: 'Letícia Valois', role: 'Locutora' },
   { name: 'Hrönir', role: 'Trilha sonora' },
 ];

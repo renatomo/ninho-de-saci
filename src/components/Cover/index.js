@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import CircleLoader from "react-spinners/CircleLoader";
 import { HiChevronDoubleDown } from 'react-icons/hi';
 import { AppContext } from '../../context';
-import { loadCoverAnimations, loadMessageIconsAnimation } from '../../hooks';
+import { loadCoverAnimations, loadMessageIconsAnimation } from '../../hooks/animations';
 import AudioPlayer from '../AudioPlayer';
 import Media from '../../assets/media';
 import './styles.css';
