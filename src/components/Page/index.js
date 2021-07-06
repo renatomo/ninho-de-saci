@@ -1,25 +1,26 @@
-import React, { useRef, useEffect } from 'react';
-import { loadPageText, changeImages } from '../../hooks';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { loadPageText } from '../../hooks/animations';
 import './styles.css';
 
-const Page = ({ image, text, index }) => {
-  let mainImage = useRef(null);
-  let textImage = useRef(null);
-  let pageElement = useRef(null);
+const Page = ({ image, text, pageRef }) => {
+  const [willUnmount, setWillUnmount] = useState(false);
 
   useEffect(
     () => {
-      loadPageText(mainImage, textImage);
-      changeImages(pageElement);
+      if (!willUnmount) loadPageText();
+      return () => setWillUnmount(true);
     },
-    [index],
+    [],
   );
 
   return (
-    <div ref={ e => pageElement = e } src={ image } className="page">
-      <img ref={ e => textImage = e } src={ text } alt="" className="page-text" />
-      <img ref={ e => mainImage = e } src={ image } alt="" className="page-image" />
-    </div>
+    <article ref={ e => pageRef.current = e } src={ image } className="page">
+      { !willUnmount && text.map((layer) => (
+        <img src={ layer } alt="" className="page__text" />
+      )) }
+      <img src={ image } alt="" className="page__image" />
+    </article>
   );
 };
 

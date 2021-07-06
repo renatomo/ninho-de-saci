@@ -1,19 +1,45 @@
 .cover {
-  background-color: #3f3162;
+  align-items: center;
+  background: -webkit-linear-gradient(to right, #3f3162, #48365c);
+  background: linear-gradient(to right, #3f3162, #48365c);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
 }
 
-.cover-image {
+.cover__image {
   height: 100vh;
 }
 
-.cover-text {
+.cover__message {
+  align-items: center;
+  background-color: rgb(72, 73, 67, .6);
+  color: white;
+  display: flex;
+  font-family: "Schoolbell";
+  font-size: 1.4em;
+  justify-content: center;
+  height: 7vh;
   position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.cover__message__text {
+  margin: 0 10px;
+}
+
+.cover__text {
   height: 72vh;
-  width: auto;
   left: 8%;
+  position: absolute;
   top: -7vh;
+  width: auto;
+}
+
+.cover__message__icon{
+  font-size: 1.2em;
 }

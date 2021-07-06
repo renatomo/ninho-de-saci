@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppProvider } from './context';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/fonts/Schoolbell-Regular.ttf';
-import Favicon from 'react-favicon';
-import Icon from './assets/images/favicon.ico';
+import ReactFavicon from 'react-favicon';
+import FavIcon from './assets/media/favicon.ico';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Favicon url={ Icon } />
-    <App />
+    <ReactFavicon url={ FavIcon } />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
