@@ -71,13 +71,12 @@ const ReadingArea = () => {
       <div className="reading-area__page" ref={ e => pageArea.current = e }>
         <Page
           { ...pages[pageIndex] }
-          index={ pageIndex }
           pageRef={ currentPage }
         />
         { shouldGoToNext && (
           <Page
             { ...pages[nextPageIndex] }
-            index={ pageIndex }
+            next={ true }
             pageRef={ nextPage }
           /> )}
       </div>

@@ -25,7 +25,8 @@ import Page3Text from './pagina3-texto1.png';
 import Page4Text from './pagina4-texto1.png';
 import Page5Text from './pagina5-texto1.png';
 import Page6Text from './pagina6-texto1.png';
-import Page7Text from './pagina7-texto1.png';
+import Page7Text1 from './pagina7-texto1.png';
+import Page7Text2 from './pagina7-texto2.png';
 import Page8Text from './pagina8-texto1.png';
 import Page9Text from './pagina9-texto1.png';
 import Page10Text from './pagina10-texto1.png';
@@ -67,7 +68,7 @@ const media = {
     },
     {
       image: Page7,
-      text: [Page7Text],
+      text: [Page7Text1, Page7Text2],
     },
     {
       image: Page8,
