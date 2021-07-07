@@ -68,7 +68,7 @@ const media = {
     },
     {
       image: Page7,
-      text: [Page7Text1, Page7Text2],
+      text: [Page7Text2, Page7Text1],
     },
     {
       image: Page8,
