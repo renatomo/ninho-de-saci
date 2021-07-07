@@ -16,19 +16,17 @@
   font-size: max(2vw, 1em);
   justify-content: space-between;
   margin: 0 1em;
-  width: 15%;
+  width: 16%;
 }
 
 .reading-area__nav {
   display: flex;
   justify-content: space-between;
-  /* height: 20vh; */
 }
 
 .reading-area__page {
   width: 200vw;
   display: flex;
-  /* position: relative; */
 }
 
 .reading-area__next-page {

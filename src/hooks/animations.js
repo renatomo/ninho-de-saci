@@ -139,17 +139,17 @@ export const loadReadingAreaTransition = () => {
 };
 
 export const loadPageText = () => {
-  const tl = gsap.timeline();
-  tl.fromTo(
-      '.page__text',
-      {
-        opacity: 0,
-      },
-      {
-        delay: .8,
-        opacity: 1,
-      },
-    );
+  const texts = gsap.utils.toArray('.page__text');
+  texts.forEach((text, index) => gsap.fromTo(
+    text,
+    {
+      opacity: 0,
+    },
+    {
+      delay: .8 * index + 1,
+      opacity: 1,
+    },
+  ));
 };
 
 export const backCoverParallax = (bg) => {
