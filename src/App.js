@@ -7,6 +7,7 @@ import Cover from './components/Cover';
 import Modal from './components/Modal';
 import ReadingArea from './components/ReadingArea';
 import BackCover from './components/BackCover';
+import Footer from './components/Footer';
 
 const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
@@ -48,6 +49,7 @@ function App() {
       <>
         <ReadingArea />
         <BackCover />
+        <Footer />
       </> )}
     </main>
   );

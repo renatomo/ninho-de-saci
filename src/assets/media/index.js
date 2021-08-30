@@ -37,6 +37,7 @@ import Page14Text from './pagina14-texto1.png';
 import Page15Text from './pagina15-texto1.png';
 import Page16Text from './pagina16-texto1.png';
 import Page17Text from './pagina17-texto1.png';
+import Brands from './brands.png';
 
 const media = {
   cover: { image: CoverImage, text: CoverText, audio: CoverAudio },
@@ -111,6 +112,7 @@ const media = {
       text: [Page17Text],
     },
   ],
+  brands: Brands,
 };
 
 export default media;
